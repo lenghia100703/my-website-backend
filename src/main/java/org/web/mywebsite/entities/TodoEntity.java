@@ -6,25 +6,29 @@ import lombok.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
-import java.util.List;
+import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
-@Table(name = "course")
+@Table(name = "todo")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CourseEntity extends BaseEntity {
+public class TodoEntity extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private String title;
 
-    private String code;
+    private String description;
 
-    @OneToMany(mappedBy = "document", cascade = CascadeType.ALL)
-    private List<DocumentEntity> documents;
+    private LocalDate startDate;
+
+    private LocalDate endDate;
+
+    private Boolean isSuccess;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -33,16 +37,4 @@ public class CourseEntity extends BaseEntity {
     @ToString.Exclude
     @JsonIgnore
     private UserEntity user;
-
-    @ManyToOne
-    @JoinColumn(name = "semester_id")
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @EqualsAndHashCode.Exclude
-    @ToString.Exclude
-    @JsonIgnore
-    private SemesterEntity semester;
-
-    private String image;
-
-    private Boolean isPublic;
 }

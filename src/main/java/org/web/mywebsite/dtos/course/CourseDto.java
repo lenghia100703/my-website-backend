@@ -17,9 +17,11 @@ import java.util.List;
 public class CourseDto {
     private Long id;
     private String name;
+    private String code;
     private List<DocumentDto> documents;
     private UserDto user;
     private Boolean isPublic;
+    private String image;
     private Date createdAt;
     private Date updatedAt;
     private String createdBy;
@@ -28,8 +30,10 @@ public class CourseDto {
     public CourseDto(CourseEntity course) {
         this.id = course.getId();
         this.name = course.getName();
+        this.code = course.getCode();
         this.isPublic = course.getIsPublic();
         this.user = new UserDto(course.getUser());
+        this.image = course.getImage();
         this.documents = course.getDocuments().stream().map(DocumentDto::new).toList();
         this.createdAt = course.getCreatedAt();
         this.updatedAt = course.getUpdatedAt();

@@ -6,43 +6,39 @@ import lombok.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "course")
+@Table(name = "semester")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CourseEntity extends BaseEntity {
+public class SemesterEntity extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
 
-    private String code;
-
-    @OneToMany(mappedBy = "document", cascade = CascadeType.ALL)
-    private List<DocumentEntity> documents;
-
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "year_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
     @JsonIgnore
-    private UserEntity user;
+    private YearEntity year;
 
-    @ManyToOne
-    @JoinColumn(name = "semester_id")
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @EqualsAndHashCode.Exclude
-    @ToString.Exclude
-    @JsonIgnore
-    private SemesterEntity semester;
+    private String description;
 
-    private String image;
+    private LocalDate startDate;
 
-    private Boolean isPublic;
+    private LocalDate endDate;
+
+    private Boolean isActive;
+
+    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
+    private List<CourseEntity> courses;
 }
