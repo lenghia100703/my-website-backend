@@ -57,7 +57,7 @@ public class UserEntity extends BaseEntity implements UserDetails {
 
     private String refreshToken;
 
-    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<CourseEntity> courses;
 
     @Override

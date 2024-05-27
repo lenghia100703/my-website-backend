@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "year")
@@ -24,6 +25,9 @@ public class YearEntity extends BaseEntity {
     private LocalDate startDate;
 
     private LocalDate endDate;
+
+    @OneToMany(mappedBy = "year", cascade = CascadeType.ALL)
+    private List<SemesterEntity> semesters;
 
     private Boolean isActive;
 }

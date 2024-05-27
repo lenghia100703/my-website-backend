@@ -39,6 +39,6 @@ public class SemesterEntity extends BaseEntity {
 
     private Boolean isActive;
 
-    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "semester", cascade = CascadeType.ALL)
     private List<CourseEntity> courses;
 }

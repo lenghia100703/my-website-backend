@@ -23,7 +23,7 @@ public class CourseEntity extends BaseEntity {
 
     private String code;
 
-    @OneToMany(mappedBy = "document", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
     private List<DocumentEntity> documents;
 
     @ManyToOne
