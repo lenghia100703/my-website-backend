@@ -11,8 +11,9 @@ public class YearScheduler {
     @Autowired
     private YearService yearService;
 
-    @Scheduled(cron = "0 0 0 * * ?")  // Chạy vào nửa đêm mỗi ngày
+    @Scheduled(cron = "0 48 20 * * *", zone = "Asia/Ho_Chi_Minh")
     public void checkAndCreateNextYear() {
+        System.out.println("Scheduler is running...");
         yearService.createNextYear();
     }
 }
