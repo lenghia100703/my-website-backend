@@ -10,8 +10,7 @@ public enum ResponseCode {
     USER_IS_DELETE("USER_IS_DELETE");
     private final String code;
 
-    private ResponseCode(String code) {
+    ResponseCode(String code) {
         this.code = code;
     }
-
 }

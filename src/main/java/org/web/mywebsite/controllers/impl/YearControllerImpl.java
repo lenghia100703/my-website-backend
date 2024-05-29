@@ -3,7 +3,6 @@ package org.web.mywebsite.controllers.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 import org.web.mywebsite.controllers.interfaces.YearController;
-import org.web.mywebsite.dtos.auth.AuthResponseDto;
 import org.web.mywebsite.dtos.common.CommonResponseDto;
 import org.web.mywebsite.dtos.common.PaginatedDataDto;
 import org.web.mywebsite.dtos.year.YearDto;

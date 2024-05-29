@@ -7,7 +7,6 @@ import org.web.mywebsite.dtos.document.DocumentDto;
 import org.web.mywebsite.dtos.user.UserDto;
 import org.web.mywebsite.entities.CourseEntity;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 

@@ -2,8 +2,6 @@ package org.web.mywebsite.securities.oauth2;
 
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.ResponseCookie;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
@@ -29,12 +27,10 @@ import static org.web.mywebsite.enums.ResponseCode.USER_IS_DELETE;
 @Service
 public class CustomOAuth2UserService extends DefaultOAuth2UserService {
     private final HttpServletResponse response;
-
-    @Autowired
-    private UserRepository userRepository;
-
     @Autowired
     ClientRegistrationRepository clientRegistrationRepository;
+    @Autowired
+    private UserRepository userRepository;
 
     @Autowired
     public CustomOAuth2UserService(HttpServletResponse response) {

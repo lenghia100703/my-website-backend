@@ -1,11 +1,8 @@
 package org.web.mywebsite.dtos.user;
 
-import jakarta.persistence.Column;
 import lombok.Data;
 import org.web.mywebsite.dtos.course.CourseDto;
-import org.web.mywebsite.entities.CourseEntity;
 import org.web.mywebsite.entities.UserEntity;
-import org.web.mywebsite.enums.AuthProvider;
 
 import java.util.Date;
 import java.util.List;

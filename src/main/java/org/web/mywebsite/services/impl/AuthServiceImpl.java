@@ -31,32 +31,28 @@ import org.web.mywebsite.services.interfaces.AuthService;
 import org.web.mywebsite.services.interfaces.MailService;
 import org.web.mywebsite.utils.SecurityContextUtil;
 
-import java.util.*;
+import java.util.Date;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class AuthServiceImpl implements AuthService {
+    private final HttpServletResponse response;
     @Autowired
     UserRepository userRepository;
-
     @Autowired
     JWTProvider jwtProvider;
-
     @Value("${default.avatar}")
     String defaultAvatar;
-
     @Autowired
     PasswordEncoder passwordEncoder;
-
-    @Autowired
-    private AuthenticationManager authenticationManager;
-
     @Autowired
     VerificationTokenRepository verificationTokenRepository;
 
     @Autowired
     MailService mailService;
-
-    private final HttpServletResponse response;
+    @Autowired
+    private AuthenticationManager authenticationManager;
 
     public AuthServiceImpl(AuthenticationManager authenticationManager, HttpServletResponse response) {
         this.authenticationManager = authenticationManager;

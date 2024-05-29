@@ -1,13 +1,11 @@
 package org.web.mywebsite.controllers.interfaces;
 
-import jakarta.mail.MessagingException;
-import org.springframework.web.bind.annotation.*;
-import org.web.mywebsite.dtos.auth.AuthResponseDto;
-import org.web.mywebsite.dtos.auth.LoginDto;
-import org.web.mywebsite.dtos.auth.SignUpDto;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.web.mywebsite.dtos.common.CommonResponseDto;
 import org.web.mywebsite.dtos.common.PaginatedDataDto;
-import org.web.mywebsite.dtos.user.UserDto;
 import org.web.mywebsite.dtos.year.YearDto;
 
 @RequestMapping("/api/year")

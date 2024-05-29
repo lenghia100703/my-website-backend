@@ -7,7 +7,6 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -24,7 +23,7 @@ public class SemesterEntity extends BaseEntity {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "year_id")
+    @JoinColumn(name = "year_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @EqualsAndHashCode.Exclude
     @ToString.Exclude

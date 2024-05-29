@@ -1,8 +1,8 @@
 package org.web.mywebsite.dtos.semester;
 
 import lombok.Data;
-import org.web.mywebsite.dtos.year.YearDto;
 import org.web.mywebsite.entities.SemesterEntity;
+import org.web.mywebsite.entities.YearEntity;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -11,7 +11,7 @@ import java.util.Date;
 public class SemesterDto {
     private Long id;
     private String name;
-    private YearDto year;
+    private YearEntity year;
     private String description;
     private LocalDate startDate;
     private LocalDate endDate;
@@ -24,7 +24,7 @@ public class SemesterDto {
     public SemesterDto(SemesterEntity semester) {
         this.id = semester.getId();
         this.name = semester.getName();
-        this.year = new YearDto(semester.getYear());
+        this.year = semester.getYear();
         this.description = semester.getDescription();
         this.startDate = semester.getStartDate();
         this.endDate = semester.getEndDate();

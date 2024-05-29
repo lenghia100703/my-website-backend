@@ -78,6 +78,7 @@ public class SecurityConfig {
                         request
                                 .requestMatchers("/api/auth/**").permitAll()
                                 .requestMatchers("/api/user/**").permitAll()
+                                .requestMatchers("/api/year/**").permitAll()
                                 .anyRequest().authenticated())
                 .authenticationProvider(authenticationProvider());
 

@@ -10,7 +10,8 @@ import org.web.mywebsite.entities.UserEntity;
 import java.util.Collection;
 import java.util.Map;
 
-@Setter @Getter
+@Setter
+@Getter
 public class UserPrincipal implements OAuth2User, UserDetails {
     private final UserEntity user;
     private Map<String, Object> attributes;

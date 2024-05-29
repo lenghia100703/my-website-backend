@@ -6,8 +6,6 @@ import org.web.mywebsite.repositories.SemesterRepository;
 import org.web.mywebsite.repositories.YearRepository;
 import org.web.mywebsite.services.interfaces.SemesterService;
 
-import java.time.LocalDate;
-
 @Service
 public class SemesterServiceImpl implements SemesterService {
     @Autowired
